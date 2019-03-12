@@ -3,14 +3,24 @@
 # creating first flask application
 #-----------------------------------------
 from flask import Flask, render_template
+from flask_bootstrap import Bootstrap
+from flask_nav import Nav
+from flask_nav.elements import *
+nav = Nav()
+nav.register_element('top', Navbar(
+    View('Home', 'index'),
+    View('Books', 'books'), View('Publishers','publishers'),View('Authors','authors')))
 app = Flask(__name__)
+nav.init_app(app)
+Bootstrap(app)
+
 
 @app.route('/')
 def index():
 	return render_template('hello.html')
 
 @app.route('/books/')
-def bookw():
+def books():
 	return render_template('books.html')
 
 @app.route('/publishers/')
