@@ -1,10 +1,15 @@
 <!-- Type in the following code and save it in the file "book.html" inside the folder
 "templates" -->
+{% extends "bootstrap/base.html"%}
+{%block content%}
 <html>
-<head></head>
+<head>
+	{{nav.top.render(renderer='bootstrap')}}
+</head>
 <body>
 <p>This is the index page</b>
 <a href="{{url_for('index')}}">Main Menu</a> <br/>
 </body>
 </html>
+{% endblock %}
 <!-- end of book.html -->
