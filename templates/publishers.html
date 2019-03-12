@@ -1,10 +1,47 @@
 <!-- Type in the following code and save it in the file "book.html" inside the folder
 "templates" -->
+{% extends "bootstrap/base.html"%}
+{%block content%}
 <html>
-<head></head>
+<head>
+	{{nav.top.render(renderer='bootstrap')}}
+</head>
 <body>
-<p>This is the publishers page</b>
+	<h1> Publishers </h1>   
+    <table  class="table" style="width:100%">
+  <tr>
+    <th>Name</th> 
+    <th>Description</th>
+    <th>Owner</th>    
+    <th>Location</th>
+    <th>Website</th>
+  </tr>
+  <tr>
+  	<td>Pottermore</td>
+  	<td>Pottermore is the digital publishing, e-commerce, entertainment, and news company from J.K. Rowling and is the global digital publisher of Harry Potter and J.K. Rowling's Wizarding World.</td>
+   	<td>J. K. Rowling</td>
+  	<td></td>
+  	<td>http://www.pottermore.com</td>
+  </tr>  
+  <tr>
+  	<td>Bloomsbury Publishing</td>
+  	<td>Bloomsbury Publishing Plc is a British independent, worldwide publishing house of fiction and non-fiction. It is a constituent of the FTSE SmallCap Index.</td>
+   	<td></td>
+  	<td>London</td>
+  	<td>http://Bloomsbury.com</td>
+  </tr>  
+  <tr>
+  	<td>Scholastic Corporation</td>
+  	<td>Scholastic Corporation is an American publishing, education and media company known for publishing, selling, and distributing books and educational materials for schools, teachers, parents, and children.</td>
+   	<td>Scholastic Corporation</td>
+  	<td>557 Broadway New York City, New York 10012, New York, The USA</td>
+  	<td>http://www.scholastic.com</td>
+  </tr>  
+
+
+</table>
 <a href="{{url_for('index')}}">Main Menu</a> <br/>
 </body>
 </html>
+{% endblock %}
 <!-- end of book.html -->
