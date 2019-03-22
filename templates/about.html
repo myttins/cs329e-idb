@@ -1,10 +1,39 @@
 <!-- Type in the following code and save it in the file "book.html" inside the folder
 "templates" -->
+{% extends "bootstrap/base.html"%}
+{%block content%}
 <html>
-<head></head>
+<head>
+	{{nav.top.render(renderer='bootstrap')}}
+</head>
 <body>
-<p>This is the about page</b>
-<a href="{{url_for('index')}}">Main Menu</a> <br/>
+<h3 style="text-align: center;"><img src="/static/images/amaan-1.jpg" alt="" width="300" height="300" /></a></h3>
+<h3 style="text-align: center;">Amaan Virani</h3>
+<p style="text-align: center;"><strong>Major(s)</strong>: Business Honors, MIS</p>
+<p style="text-align: center;"><strong>About Me</strong>: Hi I'm Amaan Virani. I'm currently a senior at UT studying Business Honors and Management Information Systems. After graduation I will be going to work in consulting. In my free time I enjoy watching tv, playing basketball, and eating good food!</p>
+<h3 style="text-align: center;"><img src="/static/images/raza-1.png" alt="" width="300" height="300" /></a></h3>
+<h3 style="text-align: center;">Raza Retiwala</h3>
+<p style="text-align: center;"><strong>Major(s)</strong>: MIS</p>
+<p style="text-align: center;"><strong>About Me</strong>: Hi! My name is Raza Retiwala. I'm a senior studying MIS at UT Austin. I was born in India, but grew up in the Houston area. I spend my free time watching way too much TV and scrolling through uber eats. I'll be graduating this coming may and will be joining Twitter as a Product Manager after that.</p>
+<h3 style="text-align: center;"><img src="/static/images/daniel-1.jpg" alt="" width="300" height="300" /></a></h3>
+<h3 style="text-align: center;">Daniel Miyares</h3>
+<p style="text-align: center;"><strong>Major(s)</strong>: Business Honors, MIS</p>
+<p style="text-align: center;"><strong>About Me</strong>: I'm a Business Honors and Management Information System student who will be graduating in May 2019. After graduation, I will be working as a Product Manager at Uber in San Francisco. In my limited free time, I play on 3-4 intramural teams simultaneously, eat second dinners, and host board game nights.</p>
+<h3 style="text-align: center;"><img src="/static/images/prachi-1.jpg" alt="" width="300" height="300" /></a></h3>
+<h3 style="text-align: center;">Prachi Shah</h3>
+<p style="text-align: center;"><strong>Major(s)</strong>: Biochemistry</p>
+<p style="text-align: center;"><strong>About Me</strong>: I am currently a senior Biochemistry Honors student at UT Austin. After graduation, I will be attending medical school at UT Southwestern in Dallas. In my free time I love to dance, cook, and binge watch Netflix.</p>
+<h3 style="text-align: center;"><img src="/static/images/kevin-1.jpg" alt="" width="300" height="300" /></a></h3>
+<h3 style="text-align: center;">Kevin Li</h3>
+<p style="text-align: center;"><strong>Major(s)</strong>: Civil Engineering</p>
+<p style="text-align: center;"><strong>About Me</strong>: I’m currently a senior civil engineering student at UT, planning to graduate in December 2019. In my free time, I enjoy watching basketball, sleeping, and spending time with friends!</p>
+	</body>
+</html>
+
+
 </body>
 </html>
+</body>
+</html>
+{% endblock %}
 <!-- end of book.html -->
