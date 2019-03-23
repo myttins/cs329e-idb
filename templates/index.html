@@ -1,15 +1,13 @@
-<!-- Type in the following code and save it in the file "book.html" inside the folder
-"templates" -->
 {% extends "bootstrap/base.html"%}
 {%block content%}
 <html>
 <head>
 	{{nav.top.render(renderer='bootstrap')}}
 </head>
-<body style="background-color:#E8CB3A;">
-<h1>Books</h1>
-<a href="{{url_for('index')}}">Main Menu</a> <br/>
-<img src= "https://timedotcom.files.wordpress.com/2018/08/library.jpg" style="width:900px;height:600px;">
+<h1 style="text-align: center;">CS329E: Virtual Library</h1>
+<h3 style="text-align:center;"><img src= "/static/images/books.jpg" alt="" width ="1500" height = "700"/></h3>
+
+
 </body>
 </html>
 {% endblock %}
