@@ -2,7 +2,7 @@
 # main2.py
 # creating first flask application
 #-----------------------------------------
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify
 from flask_bootstrap import Bootstrap
 from flask_nav import Nav
 from flask_nav.elements import *
