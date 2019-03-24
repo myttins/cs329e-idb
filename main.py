@@ -12,7 +12,7 @@ nav.register_element('top', Navbar(
     View('Books', 'books'), View('Publishers','publishers'),View('Authors','authors')))
 app = Flask(__name__)
 nav.init_app(app)
-Bootstrap(app)
+bootstrap = Bootstrap(app)
 
 
 @app.route('/')
