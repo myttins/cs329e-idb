@@ -35,6 +35,8 @@ class Author(db.Model):
 	wikipedia_url=db.Column(db.String(200))
 	image_url=db.Column(db.String(200))
 	books=db.relationship("Book")
+	publisher=db.Column(db.String(200))
+
 
 
 class Publisher(db.Model):

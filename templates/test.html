@@ -1,0 +1,27 @@
+{% extends "bootstrap/base.html"%}
+{%block content%}
+
+
+<html>
+<head>
+	{{nav.top.render(renderer='bootstrap')}}
+
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+	{% block scripts %}
+ 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+	<script>
+	$(document).ready( function () {
+    $('#example').DataTable();
+	} );
+	</script>
+	{% endblock scripts %}
+
+</head>
+<body>
+	<h1> Tests </h1>
+</body>
+
+</html>
+
+{% endblock %}
