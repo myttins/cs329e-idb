@@ -55,6 +55,11 @@ def authors():
 	authors=db.session.query(Author).all()
 	return render_template('authors.html', authors=authors)
 
+@app.route('/test/')
+def test():
+	return render_template('test.html', test=test)
+
+
 if __name__ == "__main__":
 	app.debug=True
 	app.run()

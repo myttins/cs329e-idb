@@ -1,7 +1,6 @@
 {% extends "bootstrap/base.html"%}
 {%block content%}
 
-
 <html>
 <head>
 	{{nav.top.render(renderer='bootstrap')}}
@@ -19,7 +18,12 @@
 
 </head>
 <body>
-	<h1> Tests </h1>
+	<h1 style="text-align: center;"> Tests </h1>
+	<h3 style="text-align: center;">Coverage</h3>
+	<h3 style="text-align: center;"><img src="/static/images/coverage.png" alt="" width="900" height="125" /></a></h3>
+	<h3 style="text-align: center;">Unit Tests</h3>
+	<h3 style="text-align: center;"><img src="/static/images/unittests.png" alt="" width="900" height="205" /></a></h3>
+
 </body>
 
 </html>
