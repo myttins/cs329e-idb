@@ -10,6 +10,7 @@
 	{{nav.top.render(renderer='bootstrap')}}
 
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+
 	{% block scripts %}
  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
@@ -28,33 +29,32 @@
 		<tr> 
 		  <th>Image</th>  
 		  <th>Google ID</th>  
-		  <th> Title</th>
-		  <th>ISBN</th>  
+		  <th> Title</th>  
 		  <th> Publication Date</th>  
-		  <th> Description</th
->		</tr>
+		  <th> Description</th>
+		  <th> Author</th>
+		  <th> Publisher</th>
+		</tr>
 		</thead>
-		<tbody>
-		{% if books == [] %}
+		<tbody>  
+	    {% if books == [] %}
 			<p>No books exist</p>	
 		{% else %}
 			{% for i in books %}
-				<div> 
-						<tr>
-					        <td><img src= {{i.image_url}} alt= {{i.id}} style="width:128px;height:128px;"></td>
-						  <td>{{i.id}}</td> 
-						  <td>{{i.title}}</td>
-						  <td>{{i.isbn}}</td>
-						  <td>{{i.publication_date}}</td> 
-						  <td>{{i.description}}</td> 
-						</tr>
-				</div>
+			<tr>
+			<td width="20%"><img style="display:block;" width="100%" height="45%" src={{i.image_url}}></td>
+			<td>{{i.id}}</td>
+			<td><a href="{{ url_for('book_page', title=i.title)}}"> {{i.title}} </a></td>
+			<td>{{i.publication_date}}</td>
+			<td>{{i.description}}</td>
+			<td><a href="{{ url_for('author_page', name=i.author)}}"> {{i.author}} </a></td>
+			<td><a href="{{ url_for('publisher_page', name=i.publisher)}}"> {{i.publisher}} </a></td>
+			</tr>
 			{% endfor %}
 		{% endif %}
-	</tbody>
-	</table>
-</body>
-</html>
-{% endblock %}
 
-<!-- end of book.html -->
+
+	</body>
+</html>
+
+{% endblock %}

@@ -7,7 +7,7 @@ from flask_bootstrap import Bootstrap
 from flask_nav import Nav
 from flask_nav.elements import *
 from create_db import app, db, Book, Author, Publisher
-
+from models import app
 
 nav = Nav()
 nav.register_element('top', Navbar(
@@ -30,31 +30,33 @@ def books():
 	books = db.session.query(Book).all()
 	return render_template('books.html', books = books)
 
+@app.route('/books/<title>')
+def book_page(title):
+	this_book=db.session.query(Book).filter_by(title=title).first()
+	return render_template('eachbook.html', book=this_book)
+
+@app.route('/authors/<name>')
+def author_page(name):
+	this_author=db.session.query(Author).filter_by(name=name).first()
+	return render_template('eachauthor.html', author=this_author)
+
+@app.route('/publishers/<name>')
+def publisher_page(name):
+	this_publisher=db.session.query(Publisher).filter_by(name=name).first()
+	return render_template('eachpublisher.html', publisher=this_publisher)
 
 @app.route('/publishers/')
 def publishers():
-	publishers = db.session.query(Publisher).all()
-	return render_template('publishers.html', publishers = publishers)
+	publishers=db.session.query(Publisher).all()
+	return render_template('publishers.html', publishers=publishers)
 
 @app.route('/authors/')
 def authors():
-	authors = db.session.query(Author).all()
-	return render_template('authors.html', authors = authors)
-
-import subprocess
-@app.route('/test/')
-def test():
-    p = subprocess.Popen(["coverage", "run", "--branch", "test.py"],
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-            stdin=subprocess.PIPE)
-    out, err = p.communicate()
-    output=err+out
-    output = output.decode("utf-8") #convert from byte type to string type
-    
-    return render_template('test.html', output = "<br/>".join(output.split("\n")))
+	authors=db.session.query(Author).all()
+	return render_template('authors.html', authors=authors)
 
 if __name__ == "__main__":
+	app.debug=True
 	app.run()
 #----------------------------------------
 # end of main2.py
