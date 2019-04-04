@@ -7,17 +7,19 @@ import os
 import pandas as pd
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DB_STRING",'postgresql://localhost/booksdb')
+
+# MAKE SURE YOU CHANGE THE BELOW URL TO MAKE IT WORK FINE
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DB_STRING",'postgresql+psycopg2://postgres:password@localhost/booksdb')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True # to suppress a warning message
 db = SQLAlchemy(app)
 
 class Book(db.Model):
 	__tablename__ = 'book'
 
-	id = db.Column(db.Integer)
+	id = db.Column(db.String(200))
 	title = db.Column(db.String(80), nullable = False,primary_key = True)
 	isbn=db.Column(db.Integer, nullable=False)
-	publication_date=db.Column(db.DateTime)
+	publication_date=db.Column(db.String(2000))
 	image_url=db.Column(db.String(200))
 	description=db.Column(db.String(2000))
 	publisher=db.Column(db.String(80),ForeignKey('publisher.name'))
@@ -44,6 +46,7 @@ class Publisher(db.Model):
 	image_url=db.Column(db.String(200))
 	wikipedia_url=db.Column(db.String(200))
 	website=db.Column(db.String(200))
+	author=db.Column(db.String(200))
 	books=db.relationship("Book")
 
 

@@ -34,31 +34,22 @@
   </tr>
 </thead>
 <tbody>
-  <tr>
-    <td><img src="http://upload.wikimedia.org/wikipedia/en/thumb/6/6f/Pottermore.png/225px-Pottermore.png" alt="Pottermore_image" style="width:128px;height:128px;"></td>
-  	<td>Pottermore</td>
-  	<td>Pottermore is the digital publishing, e-commerce, entertainment, and news company from J.K. Rowling and is the global digital publisher of Harry Potter and J.K. Rowling's Wizarding World.</td>
-   	<td>J. K. Rowling</td>
-  	<td>London, UK</td>
-  	<td><a href="http://www.pottermore.com">Pottormore</a></td>
-  </tr>  
-  <tr>
-    <td><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Bloomsbury-publishing-logo.PNG/300px-Bloomsbury-publishing-logo.PNG" alt="Bloomsbury_image" style="width:128px;height:128px;"></td>
-  	<td>Bloomsbury Publishing</td>
-  	<td>Bloomsbury Publishing Plc is a British independent, worldwide publishing house of fiction and non-fiction. It is a constituent of the FTSE SmallCap Index.</td>
-   	<td>N/A</td>
-  	<td>London, UK</td>
-  	<td><a href="http://bloomsbury.com">Bloomsbury</a></td>
-  </tr>  
-  <tr>
-    <td><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Scholastic_Headquarters_by_Matthew_Bisanz.JPG/240px-Scholastic_Headquarters_by_Matthew_Bisanz.JPG" alt="Scholastic_image" style="width:128px;height:128px;"></td>
-
-  	<td>Scholastic Corporation</td>
-  	<td>Scholastic Corporation is an American publishing, education and media company known for publishing, selling, and distributing books and educational materials for schools, teachers, parents, and children.</td>
-   	<td>Scholastic Corporation</td>
-  	<td>New York City, USA</td>
-  	<td><a href="http://www.scholastic.com">Scholastic</a></td>
-  </tr>  
+  {% if publishers == [] %}
+      <p>No publishers exist</p> 
+    {% else %}
+      {% for i in publishers %}
+        <div> 
+            <tr>
+                    <td><img src= {{i.image_url}} alt='PLACEHOLDER' style="width:128px;height:128px;"></td>
+                  <td>{{i.name}}</td>
+                  <td>{{i.description}}</td>
+                  <td>{{i.author}}</td>
+                  <td>{{i.location}}</td>
+                  <td><a href={{i.website}}>{{i.name}}</a></td> 
+                </tr>
+        </div>
+      {% endfor %}
+    {% endif %}
 
 </tbody>
 </table>
