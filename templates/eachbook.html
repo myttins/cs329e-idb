@@ -1,0 +1,54 @@
+<!-- Type in the following code and save it in the file "book.html" inside the folder
+"templates" -->
+
+{% extends "bootstrap/base.html"%}
+{%block content%}
+
+
+<html>
+<head>
+	{{nav.top.render(renderer='bootstrap')}}
+
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+
+	{% block scripts %}
+ 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+	<script>
+	$(document).ready( function () {
+    $('#example').DataTable();
+	} );
+	</script>
+	{% endblock scripts %}
+
+</head>
+<body>
+	<div class="container">
+		<h1>{{book.title}}</h1>
+		<div class="row">
+			<div class="col-sm-6"><img src={{book.image_url}}></div>
+			<div class="col-sm-6">
+				
+				<h3>About</h3>
+				<p><strong>Publication Date: </strong>{{book.publication_date}}</p>
+				<p><strong>Description: </strong>{{book.description}}</p>
+				<p><strong>Google ID: </strong>{{book.id}}</p>
+				<p><strong>ISBN: </strong>{{book.isbn}}</p>
+
+				<h3>Author</h3>
+      			<li><a href="{{ url_for('author_page', name=book.author)}}"> {{book.author}} </a></li>
+			    
+			    <h3>Publisher</h3>
+			    <li><a href="{{ url_for('publisher_page', name=book.publisher)}}"> {{book.publisher}} </a></li>
+
+			       
+
+			</div>
+		</div>	
+	</div>
+	
+
+</body>
+</html>
+
+{% endblock %}
