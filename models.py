@@ -9,7 +9,7 @@ import pandas as pd
 app = Flask(__name__)
 
 # MAKE SURE YOU CHANGE THE BELOW URL TO MAKE IT WORK FINE
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DB_STRING",'postgresql+psycopg2://postgres:password@localhost/booksdb')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DB_STRING",'postgresql+psycopg2://postgres:password@localhost:5432/booksdb')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True # to suppress a warning message
 db = SQLAlchemy(app)
 
