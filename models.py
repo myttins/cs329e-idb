@@ -13,6 +13,9 @@ app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DB_STRING",'postgresql+p
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True # to suppress a warning message
 db = SQLAlchemy(app)
 
+
+#just making a comment so that it will build
+
 class Book(db.Model):
 	__tablename__ = 'book'
 

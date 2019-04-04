@@ -4,7 +4,7 @@ import pandas as pd
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 
-engine = create_engine('postgresql://localhost/booksdb')
+engine = create_engine('postgresql+psycopg2://postgres:password@localhost/booksdb')
 Base = declarative_base()
 Base.metadata.create_all(engine)
 file_name = 'books_only.csv'
