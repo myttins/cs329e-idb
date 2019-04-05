@@ -1,0 +1,459 @@
+commit 4f50556638e1e544388ac6d42bbf2e2af190e9fb
+Author: Prachi Shah <prachicshah2@gmail.com>
+Date:   Thu Apr 4 21:06:53 2019 -0500
+
+    Added models.html
+
+commit 8886ebb464f47ba4d094de6a95b8594598e37152
+Author: rretiwala <rretiwala@utexas.edu>
+Date:   Thu Apr 4 19:41:28 2019 -0500
+
+    new app yaml
+
+commit 702be3b8becaea37e1b848ebee07de160d5d0fa5
+Author: rretiwala <rretiwala@utexas.edu>
+Date:   Thu Apr 4 19:40:23 2019 -0500
+
+    taking out the yaml
+
+commit 2e0ecc6a9d7baf3ab7f404446490b8e3073e2fb7
+Author: rretiwala <rretiwala@utexas.edu>
+Date:   Thu Apr 4 19:06:20 2019 -0500
+
+    Updating app.yaml and the gitlab ci
+
+commit 2a0e00e51906e5121e636d448daeeeee939a506b
+Author: rretiwala <rretiwala@utexas.edu>
+Date:   Thu Apr 4 18:44:03 2019 -0500
+
+    Fixing gitlab ci
+
+commit 030c930e90014828319cd2d90ee14e48c93d1b05
+Author: Prachi Shah <prachicshah2@gmail.com>
+Date:   Thu Apr 4 18:12:48 2019 -0500
+
+    Change DB in app.yaml
+
+commit 790db2c4d0fc300bc78aea4de74cbc6b6bf6efed
+Author: Prachi Shah <prachicshah2@gmail.com>
+Date:   Thu Apr 4 16:31:03 2019 -0500
+
+    Edit main.py
+
+commit e8d3a1cb33755c53935f5d93b9fad7faac335a4e
+Merge: 9e8562b c6c981a
+Author: Prachi Shah <prachicshah2@gmail.com>
+Date:   Thu Apr 4 16:10:20 2019 -0500
+
+    Merge branch 'master' of https://gitlab.com/amv2768/swewebsite
+
+commit 9e8562b0630de84be56080a7bb4cc11b8cdba8a3
+Author: Prachi Shah <prachicshah2@gmail.com>
+Date:   Thu Apr 4 16:10:09 2019 -0500
+
+    Edit app.yaml
+
+commit c6c981ae1652c8d9cd8cbea430156cc3dd057d3b
+Author: Prachi Shah <prachicshah2@gmail.com>
+Date:   Thu Apr 4 20:59:44 2019 +0000
+
+    Delete gitlab-ci.yml
+
+commit f110886ea2d27299634b9c23fb16ba7831aaf557
+Author: Prachi Shah <prachicshah2@gmail.com>
+Date:   Thu Apr 4 20:59:21 2019 +0000
+
+    Delete test.py
+
+commit 1703966327a165c991e34c99aa7fb37bd6be74d6
+Author: Prachi Shah <prachicshah2@gmail.com>
+Date:   Thu Apr 4 15:53:12 2019 -0500
+
+    Fix app.yaml
+
+commit 94c5cf5851a77898fb004029c40d2c2adac1e198
+Merge: 09951b1 762db22
+Author: Prachi Shah <prachicshah2@gmail.com>
+Date:   Thu Apr 4 15:39:26 2019 -0500
+
+    Fix app.yaml
+
+commit 09951b1c2d1f34dab1907a533e8ec540b6dd5f2c
+Author: Prachi Shah <prachicshah2@gmail.com>
+Date:   Thu Apr 4 15:37:28 2019 -0500
+
+    Edit app.yaml
+
+commit 762db22e38fe9750b44876d9e69f135b3bc0c289
+Author: rretiwala <rretiwala@utexas.edu>
+Date:   Thu Apr 4 15:19:33 2019 -0500
+
+    daniel on raza's computer - getting db string right
+
+commit 5e36e5afee64bb77c5ada417623a127c97bfc177
+Author: rretiwala <rretiwala@utexas.edu>
+Date:   Thu Apr 4 15:14:31 2019 -0500
+
+    daniel on raza's computer trying to make ci work - it was named the wrong thing
+
+commit ca3be7668b919e51da44aa2f26ed6a253f4c95e1
+Author: rretiwala <rretiwala@utexas.edu>
+Date:   Thu Apr 4 15:11:11 2019 -0500
+
+    daniel on raza's computer trying to make ci work, this time with a new push
+
+commit 65496b3728c5aea50d2efcf5b6d3f788e4a14634
+Author: rretiwala <rretiwala@utexas.edu>
+Date:   Thu Apr 4 15:03:40 2019 -0500
+
+    daniel on raza's computer trying to make ci work
+
+commit ae0f0399b1535eefdc2c97c8d62c7fbfe716be78
+Author: = <kevin.li128@gmail.com>
+Date:   Thu Apr 4 12:52:08 2019 -0500
+
+    about page updates and tests
+
+commit 2fc3cdcf91bb396ff986d93440ca249cdcf669f1
+Author: Prachi Shah <prachicshah2@gmail.com>
+Date:   Thu Apr 4 12:32:03 2019 -0500
+
+    Edited app.yaml3
+
+commit b369bb4b5f33abb029954b46bce1f6fbc08e5a14
+Author: Prachi Shah <prachicshah2@gmail.com>
+Date:   Thu Apr 4 12:26:13 2019 -0500
+
+    Edited app.yaml2
+
+commit d42370ed7c9a65b532f24f41dc34c1fb7ee05918
+Author: Prachi Shah <prachicshah2@gmail.com>
+Date:   Thu Apr 4 12:20:01 2019 -0500
+
+    Edited app.yaml
+
+commit b417e7e18e9e81383e2c370497060b3017512aa7
+Author: = <kevin.li128@gmail.com>
+Date:   Thu Apr 4 11:26:46 2019 -0500
+
+    tests
+
+commit 05ef715a7048f7758a734855b283266201482c8d
+Author: Prachi Shah <prachicshah2@gmail.com>
+Date:   Thu Apr 4 01:19:27 2019 -0500
+
+    Adding unit tests and fix index.py
+
+commit 5c098292fa9445aa407ed100a45d009c0910efdf
+Author: amv2768 <viraniamaan@gmail.com>
+Date:   Thu Apr 4 01:08:28 2019 -0500
+
+    Removed more unncessary files
+
+commit 9d943a953be4a4c9972754497502e456a6c35371
+Author: amv2768 <viraniamaan@gmail.com>
+Date:   Thu Apr 4 01:07:02 2019 -0500
+
+    Deleted weird file that was created
+
+commit f37571665338a656cb8941eb281d8506ed5b8b5f
+Author: amv2768 <viraniamaan@gmail.com>
+Date:   Thu Apr 4 01:05:33 2019 -0500
+
+    Added individual pages for each thing
+
+commit 49edede0c4058acbeb4156c566ddc75deb24a076
+Author: amv2768 <viraniamaan@gmail.com>
+Date:   Thu Apr 4 01:02:47 2019 -0500
+
+    Resolved some merge conflicts
+
+commit aa966eae9b884f785dfca9789569dd441c14fb15
+Author: amv2768 <viraniamaan@gmail.com>
+Date:   Thu Apr 4 00:57:45 2019 -0500
+
+    Got links between models working
+
+commit 4461064abf9a8dd9401e8ecdb3308fd192b440c3
+Author: rretiwala <rretiwala@utexas.edu>
+Date:   Wed Apr 3 22:22:22 2019 -0500
+
+    Made some changes to the model to add columns, and tables now pull from db
+
+commit 22d7c022a83f5b9c05da00bae85749e8de446a45
+Author: amv2768 <viraniamaan@gmail.com>
+Date:   Wed Apr 3 19:14:52 2019 -0500
+
+    Updated CSVs with new columns
+
+commit 66be8f97267914736df9167de2912b0978acb0ab
+Merge: 48d3466 b7c4b30
+Author: amv2768 <viraniamaan@gmail.com>
+Date:   Tue Apr 2 18:02:34 2019 -0500
+
+    Ferge branch 'master' of https://gitlab.com/amv2768/swewebsite
+
+commit 48d3466dedc9a3bef73a3dbd43638bd62d92d906
+Author: amv2768 <viraniamaan@gmail.com>
+Date:   Tue Apr 2 18:01:40 2019 -0500
+
+    Setup DB and models
+
+commit b7c4b300731b9dd672c11e7beb55055f236fc098
+Author: Prachi Shah <prachicshah2@gmail.com>
+Date:   Sun Mar 24 21:21:02 2019 -0500
+
+    Added commit log
+
+commit 41ca35daf1830df348c006783cedc58cfdadd9c2
+Author: Amaan Virani <viraniamaan@gmail.com>
+Date:   Sun Mar 24 22:48:25 2019 +0000
+
+    Upload System Overview image
+
+commit 70c3d732b3a75357df8034d28dcb512d22556787
+Author: rretiwala <rretiwala@utexas.edu>
+Date:   Sun Mar 24 17:36:06 2019 -0500
+
+    Updated about page for commit info
+
+commit 4af00f7a1b19ba1d99bb548affb8226452e40636
+Author: Prachi Shah <prachicshah2@gmail.com>
+Date:   Sun Mar 24 15:31:48 2019 -0500
+
+    Editted requirements.txt flask_bootstrap version
+
+commit 378dbf937216802d7c5e2ae8b4215792836201d7
+Author: Kaiwen Li <kevin.li128@gmail.com>
+Date:   Sun Mar 24 19:06:04 2019 +0000
+
+    Update books.html images
+
+commit fd077195b05f1c083e8127a8976bc669b49e2872
+Author: Kaiwen Li <kevin.li128@gmail.com>
+Date:   Sun Mar 24 19:02:23 2019 +0000
+
+    Update authors.html images
+
+commit c9f8f487be4dfde9516db9e8ddca506d3644df87
+Author: Kaiwen Li <kevin.li128@gmail.com>
+Date:   Sun Mar 24 18:51:08 2019 +0000
+
+    Update publishers.html images
+
+commit e6aebf703089b2f89dc127e123a2cd7def1510d5
+Author: Kaiwen Li <kevin.li128@gmail.com>
+Date:   Sun Mar 24 18:47:19 2019 +0000
+
+    Added images to publishers.itml
+
+commit 58da38c9edc1d5c10d50a216b86dea19483ff3b3
+Author: Kaiwen Li <kevin.li128@gmail.com>
+Date:   Sun Mar 24 18:38:14 2019 +0000
+
+    Update publishers.html
+
+commit 525a980bbcdf2db806db9bf5532886e04ec73280
+Author: Kaiwen Li <kevin.li128@gmail.com>
+Date:   Sun Mar 24 18:32:43 2019 +0000
+
+    Update publishers.html
+
+commit 30081acf476029678d8a596f3f7393b43f05adb3
+Author: mr.miyagi <miyares@utexas.edu>
+Date:   Sun Mar 24 10:02:34 2019 -0700
+
+    finished evaluation files
+
+commit de1f0339759a73d36d55b4328f09a5b3f328c4e9
+Author: mr.miyagi <miyares@utexas.edu>
+Date:   Sat Mar 23 22:53:51 2019 -0700
+
+    added all of the evaluation form templates for team members to use
+
+commit feea8ebaaf84d91cbc3b7f4d6b0e7e715d633e9f
+Author: rretiwala <rretiwala@utexas.edu>
+Date:   Sat Mar 23 23:13:36 2019 -0500
+
+    Fixed some issues with about page
+
+commit e9e2f4c72ddc902370f934f3d9b5cb318d82460a
+Author: Prachi Shah <prachicshah2@gmail.com>
+Date:   Sat Mar 23 23:08:47 2019 -0500
+
+    Editted main.py to fix bootstrap issue
+
+commit 2c975f4253c8bd55cf22bdbfb14d3345818d8a1b
+Merge: 5199d46 c711901
+Author: amv2768 <viraniamaan@gmail.com>
+Date:   Sat Mar 23 22:28:52 2019 -0500
+
+    Fixed sorting and JS setup
+
+commit 5199d4641e4c7943568d960a31941eba496381ed
+Author: amv2768 <viraniamaan@gmail.com>
+Date:   Sat Mar 23 22:18:08 2019 -0500
+
+    Created sortable tables and set up JS
+
+commit c7119015bf90530ccbf1082576eb311b5ea78c46
+Author: rretiwala <rretiwala@utexas.edu>
+Date:   Sat Mar 23 21:24:41 2019 -0500
+
+    Updated about.html
+
+commit 29eb171aa903342fdb4f68b198fa49bd74b49d4c
+Author: Prachi Shah <prachicshah2@gmail.com>
+Date:   Sat Mar 23 17:22:06 2019 -0500
+
+    Fixed requirements.txt 3
+
+commit fe91bbf1de39359a3d4781fde80d06fcf2d2bf26
+Author: Prachi Shah <prachicshah2@gmail.com>
+Date:   Sat Mar 23 17:18:19 2019 -0500
+
+    Fixed requirements.txt 2
+
+commit 02384fdf5b1a0574e3bc1ca53283624ab5d36596
+Author: Prachi Shah <prachicshah2@gmail.com>
+Date:   Sat Mar 23 17:07:39 2019 -0500
+
+    Fixed requirements.txt
+
+commit a3469edcd1c4945f13c0965ef65bd6e9eb767a3a
+Author: Prachi Shah <prachicshah2@gmail.com>
+Date:   Sat Mar 23 16:51:09 2019 -0500
+
+    Added requirements.txt
+
+commit 1d149db05a04cbf47ea1040ceaf0f12ab8a96d9a
+Author: Prachi Shah <prachicshah2@gmail.com>
+Date:   Sat Mar 23 16:25:22 2019 -0500
+
+    Fixed app.yaml
+
+commit ca0da88b345e35e1bbee26f82854cac1e5781353
+Author: Prachi Shah <prachicshah2@gmail.com>
+Date:   Sat Mar 23 15:19:04 2019 -0500
+
+    Added app.yaml file
+
+commit b34f75aa306225f8d7a9771f306a94923f5c7ffd
+Author: Prachi Shah <prachicshah2@gmail.com>
+Date:   Sat Mar 23 00:05:31 2019 -0500
+
+    Fixed home page
+
+commit 6e5cb6d19d42c0cfff351f53f0cf7eb7c1f8e15a
+Author: rretiwala <rretiwala@utexas.edu>
+Date:   Fri Mar 22 18:53:53 2019 -0500
+
+    Updated the about page
+
+commit 11bd14dfada28519e34140ed375db1f8e06f56d5
+Author: amv2768 <viraniamaan@gmail.com>
+Date:   Wed Mar 13 15:12:33 2019 -0500
+
+    Updated format of books table
+
+commit 6d360fa5e1f500329e21c04dc0dd79c919561f60
+Author: Kaiwen Li <kevin.li128@gmail.com>
+Date:   Tue Mar 12 03:03:37 2019 +0000
+
+    Update publishers.html
+
+commit 34199013637f42535624d71e5eda6d6af83ce3d5
+Author: Prachi Shah <prachicshah2@gmail.com>
+Date:   Mon Mar 11 21:44:39 2019 -0500
+
+    Editted home page
+
+commit 528190dd2b88f9de88c353b5b5d481de779385df
+Author: amv2768 <viraniamaan@gmail.com>
+Date:   Mon Mar 11 21:35:12 2019 -0500
+
+    Changed formatting of authors page
+
+commit e74442096e1ee5e5df151679953ba3aba5eb3007
+Author: mr.miyagi <miyares@utexas.edu>
+Date:   Mon Mar 11 21:32:20 2019 -0500
+
+    editing for design consistency between books and authors
+
+commit ee33d654721b41a95e38d11f7b288c505e660cec
+Author: mr.miyagi <miyares@utexas.edu>
+Date:   Mon Mar 11 21:27:40 2019 -0500
+
+    creating an authors page and table
+
+commit d1a7bb8b5892c58fa7c79d929b9d2b2fbd181ca4
+Author: amv2768 <viraniamaan@gmail.com>
+Date:   Mon Mar 11 21:25:12 2019 -0500
+
+    Updated Books page with three rows
+
+commit 651aca57c7a7810c8a215612620d5d143353a887
+Author: rretiwala <rretiwala@utexas.edu>
+Date:   Mon Mar 11 21:15:25 2019 -0500
+
+    Adding a header to index.html
+
+commit 46f44b2b518c3783c6b03004064d731bf4f2827c
+Author: rretiwala <rretiwala@utexas.edu>
+Date:   Mon Mar 11 21:05:47 2019 -0500
+
+    Added in data file
+
+commit 0c2435c43d768f58d8bf522b906bda3d11d4e855
+Author: rretiwala <rretiwala@utexas.edu>
+Date:   Mon Mar 11 20:40:02 2019 -0500
+
+    Fixed .gitignore
+
+commit 6f67d5eb1f24b8978be7811a9782eb11b4519634
+Author: amv2768 <viraniamaan@gmail.com>
+Date:   Mon Mar 11 20:37:35 2019 -0500
+
+    Created base about and index pages
+
+commit 15652c14a656b046058871823d59d012c43b53b3
+Author: amv2768 <viraniamaan@gmail.com>
+Date:   Mon Mar 11 20:13:38 2019 -0500
+
+    Updated books html page
+
+commit a39f06f35684bcc3e900eb528b1976057261b96c
+Author: amv2768 <viraniamaan@gmail.com>
+Date:   Mon Mar 11 18:40:13 2019 -0500
+
+    Set up Bootstrap
+
+commit 145ff86e9e3c67d4f924a422ff6dc50a6e5f9c76
+Author: amv2768 <viraniamaan@gmail.com>
+Date:   Mon Mar 11 15:04:20 2019 -0500
+
+    Created initial pages for books, authors, publishers
+
+commit f11d2b309b47240302a629a856482d9c81d56730
+Author: amv2768 <viraniamaan@gmail.com>
+Date:   Sun Mar 10 19:13:00 2019 -0500
+
+    Completed setup by adding ReadMe files so directories would appear in Git
+
+commit 64b31899ee88cfff99c0d0bf6d1b7423f058a95a
+Author: amv2768 <viraniamaan@gmail.com>
+Date:   Sun Mar 10 19:08:15 2019 -0500
+
+    Further setup
+
+commit 2ffb23f9abf2e77c1ba03f5cc64c3380a2f6c9a1
+Author: amv2768 <viraniamaan@gmail.com>
+Date:   Sun Mar 10 19:00:34 2019 -0500
+
+    Initial setup
+
+commit 4d3bb9bde30a3b0ea552d9981f2300b1f61f7992
+Author: Amaan Virani <viraniamaan@gmail.com>
+Date:   Sun Mar 10 23:48:22 2019 +0000
+
+    Initial commit
