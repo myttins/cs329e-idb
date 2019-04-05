@@ -14,7 +14,7 @@ app = Flask(__name__)
 """
 configure flask app to include postgres database
 """
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DB_STRING",'postgresql+psycopg2://postgres:password@localhost:5432/booksdb')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DB_STRING",'postgresql+psycopg2://postgres:password@/postgres?host=/cloudsql/cs-329e-website:us-central1:booksdb')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True # to suppress a warning message
 db = SQLAlchemy(app)
 
