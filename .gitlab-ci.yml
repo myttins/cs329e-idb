@@ -7,6 +7,6 @@ before_script:
     
 
 python:
-    image: prachishah/python
+    image: python:3
     script:
     - python3 main.py
