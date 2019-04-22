@@ -7,6 +7,6 @@ before_script:
     
 
 python:
-    image: python
+    image: python3
     script:
     - python3 main.py
