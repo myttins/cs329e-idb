@@ -1,7 +1,10 @@
 before_script:
     - date
     - uname -a
+    - pip install --upgrade pip
+    - pip install -r requirements.txt
     - printenv | sort
+    
 
 python:
     image: python
