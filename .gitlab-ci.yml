@@ -22,3 +22,6 @@ before_script:
     - printenv | sort
     - python3 create_db.py
 
+test:
+  script:
+  - python tests.py
