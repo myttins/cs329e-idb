@@ -10,7 +10,7 @@ services:
 
 variables:
   POSTGRES_DB: booksdb
-  DB_STRING: "postgresql+psycopg2://postgres:password@/postgres?host=/cloudsql/cs-329e-website:us-central1:booksdb"
+  DB_STRING: "postgresql://postgres:postgres@postgres/$POSTGRES_DB"
 
 # This is a basic example for a gem or script which doesn't use
 # services such as redis or postgres
@@ -20,7 +20,5 @@ before_script:
     - pip install --upgrade pip
     - pip install -r requirements.txt
     - printenv | sort
+    - python3 create_db.py
 
-test:
-  script:
-  - python tests.py
