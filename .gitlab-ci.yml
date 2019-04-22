@@ -25,3 +25,9 @@ before_script:
 test:
   script:
   - python tests.py
+  
+connect:
+    image: postgres
+    script:
+    -export PGPASSWORD=$POSTGRES_PASSWORD
+    -psql -h "postgres" -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "SELECT 'OK' AS status;"
