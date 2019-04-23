@@ -47,9 +47,7 @@ class DBTestCases(unittest.TestCase):
 		db.session.query(Book).filter_by(id = '102').delete()
 		db.session.commit()
 
-	"""
    	class Author
-   	"""
 	def test_source_Author_1(self):
    		s = Author(name = "Prachi", nationality = 'Indian')
 
@@ -86,9 +84,8 @@ class DBTestCases(unittest.TestCase):
 		db.session.query(Author).filter_by(name = 'Daniel').delete()
 		db.session.commit()
 
-	"""
+
     class Publisher
-	"""
 	def test_source_Publisher_1(self):
 		s = Publisher(name='Raza', location = 'Austin')
 		
