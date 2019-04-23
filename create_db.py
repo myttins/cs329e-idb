@@ -5,7 +5,8 @@ import os
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 
-engine = create_engine('postgresql+psycopg2://postgres:password@/postgres?host=/cloudsql/cs-329e-website:us-central1:booksdb')
+temp = os.environ.get("DB_STRING", 'postgresql+psycopg2://postgres:password@/postgres?host=/cloudsql/cs-329e-website:us-central1:booksdb')
+engine = create_engine(temp)
 Base = declarative_base()
 Base.metadata.create_all(engine)
 file_name = 'books_only.csv'
