@@ -7,7 +7,7 @@ from create_db import db, Book, Author, Publisher
 class DBTestCases(unittest.TestCase):
    
    def dummy_test(self):
-       self.assert(1,1)
+       self.assertEqual(1,1)
    """ 
 
 	class Book
