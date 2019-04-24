@@ -1,0 +1,4 @@
+.PHONY IDB3.log
+
+IDB3.log:
+	git log > IDB3.log
