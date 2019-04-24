@@ -7,7 +7,8 @@ from flask_bootstrap import Bootstrap
 from flask_nav import Nav
 from flask_nav.elements import *
 from create_db import app, db, Book, Author, Publisher
-from models import app
+from models import app, Book, Author, Publisher
+from sqlalchemy import or_
 
 nav = Nav()
 nav.register_element('top', Navbar(
@@ -19,50 +20,61 @@ bootstrap = Bootstrap(app)
 
 @app.route('/')
 def index():
-	return render_template('index.html')
+    return render_template('index.html')
+
 
 @app.route('/about')
 def about():
-	return render_template('about.html')
+    return render_template('about.html')
 
 @app.route('/books/')
 def books():
-	books = db.session.query(Book).all()
-	return render_template('books.html', books = books)
+    books = db.session.query(Book).all()
+    return render_template('books.html', books = books)
 
 @app.route('/books/<title>')
 def book_page(title):
-	this_book=db.session.query(Book).filter_by(title=title).first()
-	return render_template('eachbook.html', book=this_book)
+    this_book=db.session.query(Book).filter_by(title=title).first()
+    return render_template('eachbook.html', book=this_book)
 
 @app.route('/authors/<name>')
 def author_page(name):
-	this_author=db.session.query(Author).filter_by(name=name).first()
-	return render_template('eachauthor.html', author=this_author)
+    this_author=db.session.query(Author).filter_by(name=name).first()
+    return render_template('eachauthor.html', author=this_author)
 
 @app.route('/publishers/<name>')
 def publisher_page(name):
-	this_publisher=db.session.query(Publisher).filter_by(name=name).first()
-	return render_template('eachpublisher.html', publisher=this_publisher)
+    this_publisher=db.session.query(Publisher).filter_by(name=name).first()
+    return render_template('eachpublisher.html', publisher=this_publisher)
 
 @app.route('/publishers/')
 def publishers():
-	publishers=db.session.query(Publisher).all()
-	return render_template('publishers.html', publishers=publishers)
+    publishers=db.session.query(Publisher).all()
+    return render_template('publishers.html', publishers=publishers)
 
 @app.route('/authors/')
 def authors():
-	authors=db.session.query(Author).all()
-	return render_template('authors.html', authors=authors)
+    authors=db.session.query(Author).all()
+    return render_template('authors.html', authors=authors)
 
 @app.route('/test/')
 def test():
-	return render_template('test.html', test=test)
+    return render_template('test.html', test=test)
+    
+
+@app.route('/search/<string:prompt>')
+def search(prompt):
+
+
+    publishers = db.session.query(Publisher).filter(or_(Publisher.name.ilike('%' + prompt + '%'), Publisher.description.ilike('%' + prompt + '%')))
+    authors = db.session.query(Author).filter(or_(Author.name.ilike('%' + prompt + '%'), Author.description.ilike('%' + prompt + '%')))
+    books = db.session.query(Book).filter(or_(Book.title.ilike('%' + prompt + '%'), Book.description.ilike('%' + prompt + '%'),Book.author.ilike('%' + prompt + '%'),Book.publisher.ilike('%' + prompt + '%')))
+    return render_template('search.html', prompt = prompt, publishers = publishers, authors=authors, books= books)
 
 
 if __name__ == "__main__":
-	app.debug=True
-	app.run()
+    app.debug=True
+    app.run()
 #----------------------------------------
 # end of main2.py
 #-----------------------------------------

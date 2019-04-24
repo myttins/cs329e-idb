@@ -1,0 +1,160 @@
+{% extends "bootstrap/base.html"%}
+{%block content%}
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+ 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+
+	<script>
+	$(document).ready( function () {
+    $('#example').DataTable();
+	} );
+	</script>
+
+</head>
+
+<body>
+
+	<nav class = "navbar navbar-expand-lg navbar-light bg-light" >
+		<a class="nav-link" href="{{url_for('index')}}">Home</a>
+		<a class="nav-link" href="{{url_for('about')}}">About</a>		
+		<a class="nav-link active" href="{{url_for('books')}}">Books</a>
+		<a class="nav-link" href="{{url_for('authors')}}">Authors</a>
+		<a class="nav-link" href="{{url_for('publishers')}}">Publishers</a>
+
+
+		<div id='submit'>
+		<form class='form-inline my-2 my-lg-0' >
+			<input class='form-control mr-sm-2' type='search' placeholder="Search..." aria-label='Search' id='search'>
+			<button class='btn btn-outline-success my-2 my-sm-0' type='submit' id='submit_btn'>Search</button>
+		</form>
+		</div>
+	</nav>
+
+  	<h1> Search Results for: {{prompt}} </h1>  
+
+	<h3 style="text-align: center;">Books</h3>
+	<table class="table table-striped" id='books_table'>
+		<!-- Table Header -->
+		<thead>
+			<tr> 
+			  <th> Title</th>  
+			  <th> Publication Date</th>  
+			  <th> Description</th>
+			  <th> Author</th>
+			  <th> Publisher</th>
+			</tr>		</thead>
+
+		<!-- Table Entry -->
+
+		<tbody>
+  	    {% if books == [] %}
+			<p>No books exist</p>	
+		{% else %}
+			{% for i in books %}
+			<tr>
+			<td><a href="{{ url_for('book_page', title=i.title)}}"> {{i.title}} </a></td>
+			<td>{{i.publication_date}}</td>
+			<td>{{i.description}}</td>
+			<td><a href="{{ url_for('author_page', name=i.author)}}"> {{i.author}} </a></td>
+			<td><a href="{{ url_for('publisher_page', name=i.publisher)}}"> {{i.publisher}} </a></td>
+			</tr>
+			{% endfor %}
+		{% endif %}
+		</tbody>
+	</table>
+
+	<h3 style="text-align: center;">Authors</h3>
+	<table class="table table-striped" id='authors_table'>
+		<!-- Table Header -->
+		<thead>
+			<tr> 
+			  <th>Name</th>  
+			  <th> Nationality</th>
+			  <th>Description</th>  
+			  <th> Wikipedia</th>  
+			  <th> Books</th>
+			  <th> Publishers</th>
+			</tr>
+		</thead>
+
+		<!-- Table Entry -->
+		<tbody>
+		    {% if authors == [] %}
+				<p>No books exist</p>	
+			{% else %}
+				{% for i in authors %}
+				<tr>
+				<td><a href="{{ url_for('author_page', name=i.name)}}"> {{i.name}} </a></td>
+				<td>{{i.nationality}}</td>
+				<td>{{i.description}}</td>
+				<td><a href={{i.wikipedia_url}}> Wikipedia </a></td>
+				<td><ul>
+				{% for book in i.books %}
+				<li><a href="{{ url_for('book_page', title=book.title)}}"> {{book.title}} </a></li>{% endfor %}</ul> </td>
+				<td><ul>
+				{% for pub in i.publisher.split(',') %}
+				<li><a href="{{ url_for('publisher_page', name=pub)}}"> {{pub}} </a></li>{% endfor %}</ul> </td>
+				</tr>
+				{% endfor %}
+			{% endif %}
+
+		</tbody>
+	</table>
+
+
+	<h3 style="text-align: center;">Publishers</h3>
+	<table class="table table-striped" id='publishers_table'>
+		<!-- Table Header -->
+		<thead>
+			<tr>
+				  <th>Name</th>  
+				  <th> Location</th>
+				  <th>Description</th>  
+				  <th> Wikipedia</th>  
+				  <th> Books</th>
+				  <th> Authors</th>
+			</tr>
+		</thead>
+		<!-- Table Entry -->
+		<tbody>
+			{% if publishers == [] %}
+				<p>No books exist</p> 
+			{% else %}
+			  {% for i in publishers %}
+			  <tr>
+			  <td><a href="{{ url_for('publisher_page', name=i.name)}}"> {{i.name}} </a></td>
+			  <td>{{i.location}}</td>
+			  <td>{{i.description}}</td>
+			  <td><a href={{i.wikipedia_url}}> Wikipedia </a></td>
+			  <td><ul>
+			  {% for book in i.books %}
+			  <li><a href="{{ url_for('book_page', title=book.title)}}"> {{book.title}} </a></li>{% endfor %}</ul> </td>
+			  <td><ul>
+			  {% for author in i.author.split(',') %}
+			  <li><a href="{{ url_for('author_page', name=author)}}"> {{author}} </a></li>{% endfor %}</ul> </td>
+			  </tr>
+			  {% endfor %}
+			{% endif %}
+		</tbody>
+	</table>
+
+
+
+	<script type="text/javascript">
+	var btn = document.getElementById("submit_btn");
+	
+	btn.addEventListener('click', function(e){
+		e.preventDefault();
+		var search = document.getElementById('search').value;
+		var url = "{{url_for('search', prompt = 'placeholder')}}".replace('placeholder',search)
+		location.href = url;
+	})
+	</script>
+
+
+</body>
+
+{% endblock %}
