@@ -7,22 +7,37 @@
 
 <html>
 <head>
-	{{nav.top.render(renderer='bootstrap')}}
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
-	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
-
-	{% block scripts %}
  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+
 	<script>
 	$(document).ready( function () {
     $('#example').DataTable();
 	} );
 	</script>
-	{% endblock scripts %}
 
 </head>
+
+
 <body>
+	<nav class = "navbar navbar-expand-lg navbar-light bg-light" >
+		<a class="nav-link" href="{{url_for('index')}}">Home</a>
+		<a class="nav-link" href="{{url_for('about')}}">About</a>		
+		<a class="nav-link active" href="{{url_for('books')}}">Books</a>
+		<a class="nav-link" href="{{url_for('authors')}}">Authors</a>
+		<a class="nav-link" href="{{url_for('publishers')}}">Publishers</a>
+
+
+		<div id='submit'>
+		<form class='form-inline my-2 my-lg-0' >
+			<input class='form-control mr-sm-2' type='search' placeholder="Search..." aria-label='Search' id='search'>
+			<button class='btn btn-outline-success my-2 my-sm-0' type='submit' id='submit_btn'>Search</button>
+		</form>
+		</div>
+	</nav>
+
 	<h1> Books </h1>   
     <table id="example" class="table table-bordered table-hover table-striped" style="width:98%">
 		<thead>
@@ -52,7 +67,17 @@
 			</tr>
 			{% endfor %}
 		{% endif %}
-
+	
+	<script type="text/javascript">
+	var btn = document.getElementById("submit_btn");
+	
+	btn.addEventListener('click', function(e){
+		e.preventDefault();
+		var search = document.getElementById('search').value;
+		var url = "{{url_for('search', prompt = 'placeholder')}}".replace('placeholder',search)
+		location.href = url;
+	})
+	</script>
 
 	</body>
 </html>

@@ -7,56 +7,82 @@
 
 <html>
 <head>
-  {{nav.top.render(renderer='bootstrap')}}
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
-
-  {% block scripts %}
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+
   <script>
   $(document).ready( function () {
     $('#example').DataTable();
   } );
   </script>
-  {% endblock scripts %}
 
 </head>
-<body>
-  <h1> Publishers </h1>   
-    <table id="example" class="table table-bordered table-hover table-striped" style="width:98%">
-    <thead>
-    <tr> 
-      <th>Image</th>  
-      <th>Name</th>  
-      <th> Location</th>
-      <th>Description</th>  
-      <th> Wikipedia</th>  
-      <th> Books</th>
-      <th> Authors</th>
-    </tr>
-    </thead>
-    <tbody>  
-      {% if publishers == [] %}
-      <p>No books exist</p> 
-    {% else %}
-      {% for i in publishers %}
-      <tr>
-      <td width="20%"><img style="display:block;" width="100%" height="70%" src={{i.image_url}}></td>
-      <td><a href="{{ url_for('publisher_page', name=i.name)}}"> {{i.name}} </a></td>
-      <td>{{i.location}}</td>
-      <td>{{i.description}}</td>
-      <td><a href={{i.wikipedia_url}}> Wikipedia </a></td>
-      <td><ul>
-      {% for book in i.books %}
-      <li><a href="{{ url_for('book_page', title=book.title)}}"> {{book.title}} </a></li>{% endfor %}</ul> </td>
-      <td><ul>
-      {% for author in i.author.split(',') %}
-      <li><a href="{{ url_for('author_page', name=author)}}"> {{author}} </a></li>{% endfor %}</ul> </td>
-      </tr>
-      {% endfor %}
-    {% endif %}
 
+<body>
+
+  <nav class = "navbar navbar-expand-lg navbar-light bg-light" >
+    <a class="nav-link" href="{{url_for('index')}}">Home</a>
+    <a class="nav-link" href="{{url_for('about')}}">About</a>   
+    <a class="nav-link active" href="{{url_for('books')}}">Books</a>
+    <a class="nav-link" href="{{url_for('authors')}}">Authors</a>
+    <a class="nav-link" href="{{url_for('publishers')}}">Publishers</a>
+
+
+    <div id='submit'>
+    <form class='form-inline my-2 my-lg-0' >
+      <input class='form-control mr-sm-2' type='search' placeholder="Search..." aria-label='Search' id='search'>
+      <button class='btn btn-outline-success my-2 my-sm-0' type='submit' id='submit_btn'>Search</button>
+    </form>
+    </div>
+  </nav>
+
+  
+  <h1> Publishers </h1>   
+  <table id="example" class="table table-bordered table-hover table-striped" style="width:98%">
+  <thead>
+  <tr> 
+    <th>Image</th>  
+    <th>Name</th>  
+    <th> Location</th>
+    <th>Description</th>  
+    <th> Wikipedia</th>  
+    <th> Books</th>
+    <th> Authors</th>
+  </tr>
+  </thead>
+  <tbody>  
+    {% if publishers == [] %}
+    <p>No books exist</p> 
+  {% else %}
+    {% for i in publishers %}
+    <tr>
+    <td width="20%"><img style="display:block;" width="100%" height="70%" src={{i.image_url}}></td>
+    <td><a href="{{ url_for('publisher_page', name=i.name)}}"> {{i.name}} </a></td>
+    <td>{{i.location}}</td>
+    <td>{{i.description}}</td>
+    <td><a href={{i.wikipedia_url}}> Wikipedia </a></td>
+    <td><ul>
+    {% for book in i.books %}
+    <li><a href="{{ url_for('book_page', title=book.title)}}"> {{book.title}} </a></li>{% endfor %}</ul> </td>
+    <td><ul>
+    {% for author in i.author.split(',') %}
+    <li><a href="{{ url_for('author_page', name=author)}}"> {{author}} </a></li>{% endfor %}</ul> </td>
+    </tr>
+    {% endfor %}
+  {% endif %}
+
+  <script type="text/javascript">
+  var btn = document.getElementById("submit_btn");
+  
+  btn.addEventListener('click', function(e){
+    e.preventDefault();
+    var search = document.getElementById('search').value;
+    var url = "{{url_for('search', prompt = 'placeholder')}}".replace('placeholder',search)
+    location.href = url;
+  })
+  </script>
 
   </body>
 </html>
