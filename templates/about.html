@@ -4,9 +4,37 @@
 {%block content%}
 <html>
 <head>
-	{{nav.top.render(renderer='bootstrap')}}
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+ 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+
+	<script>
+	$(document).ready( function () {
+    $('#example').DataTable();
+	} );
+	</script>
+
 </head>
+
 <body>
+
+	<nav class = "navbar navbar-expand-lg navbar-light bg-light" >
+		<a class="nav-link" href="{{url_for('index')}}">Home</a>
+		<a class="nav-link" href="{{url_for('about')}}">About</a>		
+		<a class="nav-link active" href="{{url_for('books')}}">Books</a>
+		<a class="nav-link" href="{{url_for('authors')}}">Authors</a>
+		<a class="nav-link" href="{{url_for('publishers')}}">Publishers</a>
+
+
+		<div id='submit'>
+		<form class='form-inline my-2 my-lg-0' >
+			<input class='form-control mr-sm-2' type='search' placeholder="Search..." aria-label='Search' id='search'>
+			<button class='btn btn-outline-success my-2 my-sm-0' type='submit' id='submit_btn'>Search</button>
+		</form>
+		</div>
+	</nav>
+
 <h1 style="text-align: center;"><strong>About</strong></h1>
 
 <p style="text-align: center;"><strong>Total Commits</strong>: 56</p>
@@ -66,6 +94,16 @@
 <p style="text-align: center;"><strong>Git/Gitlab</strong></p>
 <p style="text-align: center;"><strong>Slack</strong></p>
 
+	<script type="text/javascript">
+	var btn = document.getElementById("submit_btn");
+	
+	btn.addEventListener('click', function(e){
+		e.preventDefault();
+		var search = document.getElementById('search').value;
+		var url = "{{url_for('search', prompt = 'placeholder')}}".replace('placeholder',search)
+		location.href = url;
+	})
+	</script>
 	</body>
 </html>
 
